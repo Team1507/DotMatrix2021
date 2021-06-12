@@ -8,6 +8,7 @@
 #include "GamepadMap.h"
 #include <frc2/Timer.h>
 #include <frc/XboxController.h>
+#include "subsystems/LEDPanel.h"
 
 
 class RobotContainer 
@@ -22,7 +23,9 @@ class RobotContainer
   // Our Code (good)
 
   frc2::Timer m_timer;
-  frc::XboxController m_topOperator{0};
+  frc::XboxController m_botDriver{0};
+  frc::XboxController m_topOperator{1};
+  LEDPanel            m_ledPanel;
 
 
  private:

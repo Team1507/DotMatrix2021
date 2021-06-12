@@ -2,6 +2,7 @@
 
 #include <frc/TimedRobot.h>
 #include <frc2/command/Command.h>
+#include <frc/DriverStation.h>
 
 #include "RobotContainer.h"
 
@@ -21,5 +22,7 @@ class Robot : public frc::TimedRobot {
   frc2::Command* m_autonomousCommand = nullptr;
 
   RobotContainer m_container;
+
   void WriteToSmartDashboard(void); 
+  void CheckAlliance(void);
 };
