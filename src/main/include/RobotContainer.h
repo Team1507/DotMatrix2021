@@ -9,6 +9,7 @@
 #include <frc2/Timer.h>
 #include <frc/XboxController.h>
 #include "subsystems/LEDPanel.h"
+#include "subsystems/Drivetrain.h"
 
 
 class RobotContainer 
@@ -26,6 +27,7 @@ class RobotContainer
   frc::XboxController m_botDriver{0};
   frc::XboxController m_topOperator{1};
   LEDPanel            m_ledPanel;
+  Drivetrain          m_drivetrain;
 
 
  private:

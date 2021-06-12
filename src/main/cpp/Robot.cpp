@@ -13,6 +13,8 @@ void Robot::RobotInit()
 
 
     m_container.m_ledPanel.SetAllLEDColor(255,255,0);  //Yellow
+    m_container.m_drivetrain.InitFalcons();
+    m_container.m_drivetrain.Stop();
 
  }
 
@@ -36,7 +38,7 @@ void Robot::DisabledPeriodic()
 {
 
   m_container.m_ledPanel.LedPanelPeriodic();
-  
+
 }
 
 
