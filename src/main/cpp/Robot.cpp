@@ -15,6 +15,7 @@ void Robot::RobotInit()
     m_container.m_ledPanel.SetAllLEDColor(255,255,0);  //Yellow
     m_container.m_drivetrain.InitFalcons();
     m_container.m_drivetrain.Stop();
+    m_container.m_drivetrain.HardResetEncoders();
 
  }
 
@@ -141,6 +142,17 @@ void Robot::WriteToSmartDashboard(void)
 
 
 
+
+    //Motors
+    frc::SmartDashboard::PutNumber("L_Motor",  m_container.m_drivetrain.GetLeftMotor()  );
+    frc::SmartDashboard::PutNumber("R_Motor",  m_container.m_drivetrain.GetRightMotor()  );
+
+    frc::SmartDashboard::PutNumber("LeftEnc",  m_container.m_drivetrain.GetLeftEncoder());
+//  frc::SmartDashboard::PutNumber("LeftEnc2", m_container.m_drivetrain.GetLeftEncoder2());
+    frc::SmartDashboard::PutNumber("RightEnc", m_container.m_drivetrain.GetRightEncoder());  
+//  frc::SmartDashboard::PutNumber("RightEnc2",m_container.m_drivetrain.GetRightEncoder2());
+
+    m_container.m_drivetrain.WriteFalconTemps();
 
 }
 

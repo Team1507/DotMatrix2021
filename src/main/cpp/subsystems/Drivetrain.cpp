@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/Drivetrain.h"
+#include <frc/smartdashboard/SmartDashboard.h>
 
 Drivetrain::Drivetrain()
 {
@@ -48,8 +49,8 @@ void Drivetrain::InitFalcons(void)
     m_rightMotorBack.ConfigSelectedFeedbackSensor(FeedbackDevice::IntegratedSensor,0,10);
 
 
-    // m_leftMotorFront.SetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,2,10 );
-    // m_rightMotorFront.SetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,2,10);
+    m_leftMotorFront.SetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,2,10 );
+    m_rightMotorFront.SetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,2,10);
     // std::cout << "LeftStatusPeriod = " << m_leftMotorFront.GetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,10 ) << std::endl;
     // std::cout << "RightStatusPeriod = " << m_rightMotorFront.GetStatusFramePeriod(StatusFrame::Status_2_Feedback0_,10) << std::endl;
 
@@ -74,5 +75,76 @@ void Drivetrain::Stop(void)
     m_differentialDrive.TankDrive(0,0,false);
 }
 
+double Drivetrain::GetRightMotor(void)
+{
+    return -m_rightMotorFront.Get();
+}
+
+double Drivetrain::GetLeftMotor(void)
+{
+	return m_leftMotorFront.Get();
+}
+
+void Drivetrain::WriteFalconTemps(void)
+{
+    frc::SmartDashboard::PutNumber("FalconTemp LF", m_leftMotorFront.GetTemperature() );
+    frc::SmartDashboard::PutNumber("FalconTemp LR", m_leftMotorBack.GetTemperature() );
+    frc::SmartDashboard::PutNumber("FalconTemp RF", m_rightMotorFront.GetTemperature() );
+    frc::SmartDashboard::PutNumber("FalconTemp RR", m_rightMotorBack.GetTemperature() );
+}
 
 
+//**************** ENCODERS *********************
+int Drivetrain::GetLeftEncoder(void)
+{
+    return (m_leftMotorFront.GetSelectedSensorPosition(0)  - m_l1_enc_zero);
+}
+
+int Drivetrain::GetLeftEncoder2(void)
+{
+    return (m_leftMotorBack.GetSelectedSensorPosition(0) - m_l2_enc_zero);
+}
+
+int Drivetrain::GetRightEncoder(void)
+{
+    return -(m_rightMotorFront.GetSelectedSensorPosition(0) - m_r1_enc_zero);
+}
+
+int Drivetrain::GetRightEncoder2(void)
+{
+    return -(m_rightMotorBack.GetSelectedSensorPosition(0) - m_r2_enc_zero);
+}
+
+void Drivetrain::HardResetEncoders(void)
+{
+
+    //** WARNING ***
+    //It takes several cycles to perform a hard reset on the Falcons
+    //Do not use encoders immediately after a reset
+    std::cout<< "Hard Encoder Reset" << std::endl;
+
+
+    m_leftMotorFront.SetSelectedSensorPosition(0);
+    m_leftMotorBack.SetSelectedSensorPosition(0);
+    m_rightMotorFront.SetSelectedSensorPosition(0);
+    m_rightMotorBack.SetSelectedSensorPosition(0);
+    //
+    m_l1_enc_zero = 0;
+    m_l2_enc_zero = 0;
+    m_r1_enc_zero = 0;
+    m_r2_enc_zero = 0;
+}
+
+
+
+void Drivetrain::ResetEncoders(void)
+{
+    std::cout<< "Soft Encoder Reset" << std::endl;
+
+    m_l1_enc_zero = m_leftMotorFront.GetSelectedSensorPosition(0);
+    m_l2_enc_zero = m_leftMotorBack.GetSelectedSensorPosition(0);
+    m_r1_enc_zero = m_rightMotorFront.GetSelectedSensorPosition(0);
+    m_r2_enc_zero = m_rightMotorBack.GetSelectedSensorPosition(0);
+
+
+}

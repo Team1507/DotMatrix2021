@@ -22,9 +22,17 @@ class Drivetrain : public frc2::SubsystemBase {
   void ArcadeDrive( double speed, double rotation );
   void Stop(void);
 
+  double GetRightMotor(void);
+  double GetLeftMotor(void);
+  void   WriteFalconTemps(void);
 
-
-
+  //Encoders
+  int  GetLeftEncoder(void);
+  int  GetLeftEncoder2(void);
+  int  GetRightEncoder(void);
+  int  GetRightEncoder2(void);
+  void HardResetEncoders(void);   //Full Falcon Encoder Reset
+  void ResetEncoders(void);       //Local Reset
 
 
  private:
@@ -35,5 +43,11 @@ class Drivetrain : public frc2::SubsystemBase {
     WPI_TalonFX m_rightMotorBack  { RIGHTDRIVE_BACK_CAN_ID };
 
     frc::DifferentialDrive m_differentialDrive{ m_leftMotorFront, m_rightMotorFront };
+
+    //Encoder Zeros
+    int m_l1_enc_zero;
+    int m_l2_enc_zero;
+    int m_r1_enc_zero;
+    int m_r2_enc_zero;
 
 };
