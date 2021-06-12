@@ -5,7 +5,7 @@
 #include "commands/ExampleCommand.h"
 #include "subsystems/ExampleSubsystem.h"
 
-
+#include "GamepadMap.h"
 #include <frc2/Timer.h>
 #include <frc/XboxController.h>
 
