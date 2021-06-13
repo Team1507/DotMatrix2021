@@ -16,6 +16,7 @@ void Robot::RobotInit()
     m_container.m_drivetrain.InitFalcons();
     m_container.m_drivetrain.Stop();
     m_container.m_drivetrain.HardResetEncoders();
+    m_container.m_drivetrain.ZeroGyro(); 
 
  }
 
@@ -141,6 +142,10 @@ void Robot::WriteToSmartDashboard(void)
     // frc::SmartDashboard::PutBoolean("BotYButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_Y ) );
 
 
+    //Nax-X
+	  frc::SmartDashboard::PutBoolean("navx_IsConn", m_container.m_drivetrain.IsGyroConnected() );
+	  frc::SmartDashboard::PutNumber("navx_Yaw",     m_container.m_drivetrain.GetGyroYaw()      );
+   	frc::SmartDashboard::PutNumber("navx_Angle",   m_container.m_drivetrain.GetGyroAngle()    );
 
 
     //Motors

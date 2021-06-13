@@ -148,3 +148,39 @@ void Drivetrain::ResetEncoders(void)
 
 
 }
+
+
+
+//**************** AHRS (NavX) *********************
+bool Drivetrain::IsGyroConnected(void)
+{
+	return m_ahrs.IsConnected();
+}
+
+double Drivetrain::GetGyroYaw(void)
+{
+    //Returns Relative Yaw:  -180 to +180
+	return (double) m_ahrs.GetYaw();  
+}
+
+double Drivetrain::GetGyroAngle(void)
+{
+    //returns total accumulated angle -inf to +inf  (continuous through 360deg)
+	return (double)m_ahrs.GetAngle();
+}
+
+double Drivetrain::GetGyroRate(void)
+{
+	return m_ahrs.GetRate();
+}
+//ed was here
+void Drivetrain::ZeroGyro(void)
+{
+  	std::cout<<"ZeroGyro"<<std::endl;
+	m_ahrs.ZeroYaw();
+}
+
+
+
+
+

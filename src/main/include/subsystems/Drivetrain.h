@@ -9,7 +9,10 @@
 #include <frc/drive/DifferentialDrive.h>
 
 #include "ctre/Phoenix.h"
+#include "AHRS.h"
 #include "Constants.h"
+
+using namespace frc;  //Had to add this to get SPI port enum
 
 class Drivetrain : public frc2::SubsystemBase {
  public:
@@ -34,7 +37,14 @@ class Drivetrain : public frc2::SubsystemBase {
   void HardResetEncoders(void);   //Full Falcon Encoder Reset
   void ResetEncoders(void);       //Local Reset
 
-
+  //NavX
+  bool   IsGyroConnected(void);
+  double GetGyroYaw(void);            //yaw: Relative -180 to +180
+  double GetGyroAngle(void);          //angle: absolute -inf to +inf
+  double GetGyroRate(void);
+  void   ZeroGyro(void); 
+  
+     
  private:
 
     WPI_TalonFX m_leftMotorFront  { LEFTDRIVE_FRONT_CAN_ID };
@@ -43,6 +53,9 @@ class Drivetrain : public frc2::SubsystemBase {
     WPI_TalonFX m_rightMotorBack  { RIGHTDRIVE_BACK_CAN_ID };
 
     frc::DifferentialDrive m_differentialDrive{ m_leftMotorFront, m_rightMotorFront };
+
+    AHRS m_ahrs{SPI::Port::kMXP};	    //NavX
+
 
     //Encoder Zeros
     int m_l1_enc_zero;
