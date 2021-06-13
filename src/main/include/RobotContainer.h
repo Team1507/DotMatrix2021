@@ -8,6 +8,8 @@
 #include "GamepadMap.h"
 #include <frc2/Timer.h>
 #include <frc/XboxController.h>
+#include <frc2/command/button/JoystickButton.h>
+
 #include "subsystems/LEDPanel.h"
 #include "subsystems/Drivetrain.h"
 
@@ -35,5 +37,14 @@ class RobotContainer
   ExampleSubsystem m_subsystem;
   ExampleCommand m_autonomousCommand;
 
+
+  //Buttons
   void ConfigureButtonBindings();
+  frc2::JoystickButton m_btn_driver_A{&m_botDriver, GAMEPADMAP_BUTTON_A};
+  frc2::JoystickButton m_btn_driver_B{&m_botDriver, GAMEPADMAP_BUTTON_B};
+  frc2::JoystickButton m_btn_driver_X{&m_botDriver, GAMEPADMAP_BUTTON_X};
+  frc2::JoystickButton m_btn_driver_Y{&m_botDriver, GAMEPADMAP_BUTTON_Y};
+
+
+
 };

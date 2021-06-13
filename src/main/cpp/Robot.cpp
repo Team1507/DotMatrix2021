@@ -124,21 +124,21 @@ void Robot::WriteToSmartDashboard(void)
     frc::SmartDashboard::PutNumber("TopRightXAxis", (double)m_container.m_topOperator.GetRawAxis( GAMEPADMAP_AXIS_R_X ) );
     frc::SmartDashboard::PutNumber("TopRightYAxis", (double)m_container.m_topOperator.GetRawAxis( GAMEPADMAP_AXIS_R_Y ) );
 
-    frc::SmartDashboard::PutBoolean("TopAButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_A ) );
-    frc::SmartDashboard::PutBoolean("TopBButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_B ) );
-    frc::SmartDashboard::PutBoolean("TopXButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_X ) );
-    frc::SmartDashboard::PutBoolean("TopYButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_Y ) );
+    // frc::SmartDashboard::PutBoolean("TopAButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_A ) );
+    // frc::SmartDashboard::PutBoolean("TopBButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_B ) );
+    // frc::SmartDashboard::PutBoolean("TopXButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_X ) );
+    // frc::SmartDashboard::PutBoolean("TopYButton", (bool)m_container.m_topOperator.GetRawButton( GAMEPADMAP_BUTTON_Y ) );
 
 
-    frc::SmartDashboard::PutNumber("BotLeftXAxis",  (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_L_X ) ); 
-    frc::SmartDashboard::PutNumber("BotLeftYAxis",  (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_L_Y ) );
-    frc::SmartDashboard::PutNumber("BotRightXAxis", (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_R_X ) );
-    frc::SmartDashboard::PutNumber("BotRightYAxis", (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_R_Y ) );
+    // frc::SmartDashboard::PutNumber("BotLeftXAxis",  (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_L_X ) ); 
+    // frc::SmartDashboard::PutNumber("BotLeftYAxis",  (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_L_Y ) );
+    // frc::SmartDashboard::PutNumber("BotRightXAxis", (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_R_X ) );
+    // frc::SmartDashboard::PutNumber("BotRightYAxis", (double)m_container.m_botDriver.GetRawAxis( GAMEPADMAP_AXIS_R_Y ) );
 
-    frc::SmartDashboard::PutBoolean("BotAButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_A ) );
-    frc::SmartDashboard::PutBoolean("BotBButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_B ) );
-    frc::SmartDashboard::PutBoolean("BotXButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_X ) );
-    frc::SmartDashboard::PutBoolean("BotYButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_Y ) );
+    // frc::SmartDashboard::PutBoolean("BotAButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_A ) );
+    // frc::SmartDashboard::PutBoolean("BotBButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_B ) );
+    // frc::SmartDashboard::PutBoolean("BotXButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_X ) );
+    // frc::SmartDashboard::PutBoolean("BotYButton", (bool)m_container.m_botDriver.GetRawButton( GAMEPADMAP_BUTTON_Y ) );
 
 
 
