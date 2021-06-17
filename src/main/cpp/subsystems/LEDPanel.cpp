@@ -29,15 +29,29 @@ void LEDPanel::LedPanelPeriodic()
     {
         m_count = 0;
         ClearBuffer();
+        if(m_index >= kLEDLength/2)
+        {
+            SetOneLEDColor(m_index-(kLEDLength/2),0,0,255);    //blue
+        }
+        else
+        {
+            SetOneLEDColor(m_index+(kLEDLength/2),0,0,255);    //blue
+        }
         SetOneLEDColor(m_index++,255,255,0);    //Yellow
-
         if( m_index >= kLEDLength)
         {
             m_index=0;
         }
-
+        if(m_index >= kLEDLength/2)
+        {
+            SetOneLEDColor(m_index-(kLEDLength/2),0,0,255);    //blue
+        }
+        else
+        {
+            SetOneLEDColor(m_index+(kLEDLength/2),0,0,255);    //blue
+        }
         SetOneLEDColor(m_index,255,255,0);    //Yellow
-
+        SetData();
     }
 }
 
@@ -59,7 +73,7 @@ void LEDPanel::SetOneLEDColor(int LEDNum, int r, int g, int b)
     if(LEDNum < kLEDLength)
     {
         m_ledBuffer[LEDNum].SetRGB( r, g, b);
-        m_led.SetData(m_ledBuffer);
+        //m_led.SetData(m_ledBuffer);
     }
 }
 
@@ -71,4 +85,8 @@ void LEDPanel::ClearBuffer( void )
         m_ledBuffer[i].SetRGB(0,0,0);
     }
 
+}
+void LEDPanel::SetData(void)
+{
+    m_led.SetData(m_ledBuffer);
 }

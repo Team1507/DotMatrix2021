@@ -15,6 +15,7 @@ class LEDPanel : public frc2::SubsystemBase {
   //Our Funtions
   void SetAllLEDColor( int r, int g, int b);
   void SetOneLEDColor(int LEDNum, int r, int g, int b);
+  void SetData(void);
   void ClearBuffer( void );
   void LedPanelPeriodic( void );
 
