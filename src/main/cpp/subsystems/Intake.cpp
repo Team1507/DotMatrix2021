@@ -3,6 +3,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/Intake.h"
+#include <frc/smartdashboard/SmartDashboard.h>
+
 
 #define INTAKE_PERCENT .7 //can change
 
@@ -34,10 +36,8 @@ void Intake::IntakeStop()
 void Intake::IntakeForward()
 {
     //temp code to read off the smart dashboard
-    //double percent = -(frc::SmartDashboard::GetNumber("INTAKE_POWER", 0));
-    const double poop = 0.5;
-
-    m_intakeMotor.Set(ControlMode::PercentOutput, poop);   
+    double percent = -(frc::SmartDashboard::GetNumber("INTAKE_POWER", 0));
+    m_intakeMotor.Set(ControlMode::PercentOutput, percent);   
 }
 
 
