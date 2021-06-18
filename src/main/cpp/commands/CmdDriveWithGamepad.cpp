@@ -11,7 +11,7 @@ CmdDriveWithGamepad::CmdDriveWithGamepad(Drivetrain *drivetrain, frc::XboxContro
   m_ptrDrivetrain = drivetrain;
   m_ptrDriverXbox = driver_xbox;
 
-  SetName("Drivetrain");
+  //SetName("Drivetrain");
   AddRequirements({m_ptrDrivetrain});
 }
 

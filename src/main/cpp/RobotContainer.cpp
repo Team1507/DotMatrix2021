@@ -10,6 +10,7 @@
 
 //Default Commands
 #include "commands/CmdDriveWithGamepad.h"
+#include "commands/CmdIntakeDefault.h"
 
 
 
@@ -24,6 +25,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
 
   //Default Commands
   m_drivetrain.SetDefaultCommand( CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
+  m_intake.SetDefaultCommand( CmdIntakeDefault( &m_intake, &m_topOperator ) );
 
 
   ConfigureButtonBindings();

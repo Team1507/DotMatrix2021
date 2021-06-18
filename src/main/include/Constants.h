@@ -10,8 +10,8 @@
 #define RIGHTDRIVE_FRONT_CAN_ID 3
 #define RIGHTDRIVE_BACK_CAN_ID  4 
 
-
-
+//**********INTAKE CONSTANTS**********
+#define INTAKE_CAN_ID           8
 
 
 

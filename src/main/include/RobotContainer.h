@@ -12,6 +12,7 @@
 
 #include "subsystems/LEDPanel.h"
 #include "subsystems/Drivetrain.h"
+#include "subsystems/Intake.h"
 
 
 class RobotContainer 
@@ -30,6 +31,7 @@ class RobotContainer
   frc::XboxController m_topOperator{1};
   LEDPanel            m_ledPanel;
   Drivetrain          m_drivetrain;
+  Intake              m_intake;
 
 
  private:
