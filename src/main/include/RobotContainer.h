@@ -13,7 +13,7 @@
 #include "subsystems/LEDPanel.h"
 #include "subsystems/Drivetrain.h"
 #include "subsystems/Intake.h"
-
+#include "subsystems/ControlPanel.h"
 
 class RobotContainer 
 {
@@ -32,7 +32,7 @@ class RobotContainer
   LEDPanel            m_ledPanel;
   Drivetrain          m_drivetrain;
   Intake              m_intake;
-
+  ControlPanel        m_controlPanel;
 
  private:
   

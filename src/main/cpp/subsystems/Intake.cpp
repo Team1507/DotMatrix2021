@@ -36,8 +36,10 @@ void Intake::IntakeStop()
 void Intake::IntakeForward()
 {
     //temp code to read off the smart dashboard
-    double percent = -(frc::SmartDashboard::GetNumber("INTAKE_POWER", 0));
-    m_intakeMotor.Set(ControlMode::PercentOutput, percent);   
+    //double percent = -(frc::SmartDashboard::GetNumber("INTAKE_POWER", 0));
+    //m_intakeMotor.Set(ControlMode::PercentOutput, percent);   
+
+    m_intakeMotor.Set(ControlMode::PercentOutput, INTAKE_PERCENT);
 }
 
 
