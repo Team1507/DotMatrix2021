@@ -13,5 +13,8 @@
 //**********INTAKE CONSTANTS**********
 #define INTAKE_CAN_ID           8
 
+//**********CONTROL CONSTANTS**********
+#define CP_SPINNER_CAN_ID       13
+#define CP_DEPLOY_CAN_ID        14
 
 
