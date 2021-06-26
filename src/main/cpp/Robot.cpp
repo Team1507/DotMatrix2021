@@ -17,6 +17,7 @@ void Robot::RobotInit()
     m_container.m_drivetrain.Stop();
     m_container.m_drivetrain.HardResetEncoders();
     m_container.m_drivetrain.ZeroGyro(); 
+    m_container.m_drivetrain.ResetOdometry();
 
  }
 
@@ -147,6 +148,11 @@ void Robot::WriteToSmartDashboard(void)
 	  frc::SmartDashboard::PutNumber("navx_Yaw",     m_container.m_drivetrain.GetGyroYaw()      );
    	frc::SmartDashboard::PutNumber("navx_Angle",   m_container.m_drivetrain.GetGyroAngle()    );
 
+    //Odometry
+    frc::SmartDashboard::PutNumber("Curr_X",    m_container.m_drivetrain.GetOdometryX() );
+    frc::SmartDashboard::PutNumber("Curr_Y",    m_container.m_drivetrain.GetOdometryY() );
+    frc::SmartDashboard::PutNumber("Curr_Vel",  m_container.m_drivetrain.GetOdometryVel() );
+   	frc::SmartDashboard::PutNumber("Curr_Head", m_container.m_drivetrain.GetOdometryHeading() );
 
     //Motors
     frc::SmartDashboard::PutNumber("L_Motor",  m_container.m_drivetrain.GetLeftMotor()  );

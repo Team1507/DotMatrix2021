@@ -7,6 +7,7 @@
 #include <frc2/command/SubsystemBase.h>
 
 #include <frc/drive/DifferentialDrive.h>
+#include <frc2/Timer.h>
 
 #include "ctre/Phoenix.h"
 #include "AHRS.h"
@@ -18,6 +19,10 @@ class Drivetrain : public frc2::SubsystemBase {
  public:
   Drivetrain();
   void Periodic() override;
+
+  //Drivetrain Constants
+  const static int LEFT_ENCODER_TPI;       //"Ticks per inch"
+  const static int RIGHT_ENCODER_TPI; 
 
   //Support Functions
   void InitFalcons(void);
@@ -44,7 +49,16 @@ class Drivetrain : public frc2::SubsystemBase {
   double GetGyroRate(void);
   void   ZeroGyro(void); 
   
-     
+  //Odometry
+  void    ResetOdometry(void);
+  double  GetOdometryX(void);           //inches
+  double  GetOdometryY(void);           //inches
+  double  GetOdometryVel(void);         //in/sec
+  double  GetOdometryLVel(void);        //in/sec
+  double  GetOdometryRVel(void);        //in/sec
+  double  GetOdometryHeading(void);     //degrees
+
+
  private:
 
     WPI_TalonFX m_leftMotorFront  { LEFTDRIVE_FRONT_CAN_ID };
@@ -54,7 +68,9 @@ class Drivetrain : public frc2::SubsystemBase {
 
     frc::DifferentialDrive m_differentialDrive{ m_leftMotorFront, m_rightMotorFront };
 
-    AHRS m_ahrs{SPI::Port::kMXP};	    //NavX
+    AHRS m_ahrs{SPI::Port::kMXP};	    //NavXd
+
+    frc2::Timer m_timer;
 
 
     //Encoder Zeros
@@ -62,5 +78,18 @@ class Drivetrain : public frc2::SubsystemBase {
     int m_l2_enc_zero;
     int m_r1_enc_zero;
     int m_r2_enc_zero;
+
+
+    //Odometry
+    void   OdometryPeriodic(void);
+    int    m_prev_left_enc;
+    int    m_prev_right_enc;
+    double m_prev_timestamp;
+
+    double m_curr_x;  //inches
+    double m_curr_y;  //inches
+    double m_curr_v;  //inches/sec
+    double m_curr_Lv; //inches/sec
+    double m_curr_Rv; //inches/sec
 
 };
