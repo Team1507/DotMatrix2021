@@ -6,6 +6,9 @@
 //Buttons
 #include"commands/CmdTest1.h"
 #include "commands/GrpTest.h"
+#include "commands/GrpDriveTest.h"
+#include "commands/CmdDriveClearAll.h"
+
 
 
 //Default Commands
@@ -21,8 +24,8 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   //Smartdashboard Buttons
   frc::SmartDashboard::PutData("TestCmd1",  new CmdTest1() );
   frc::SmartDashboard::PutData("TestGroup", new GrpTest()  );
-
-
+  frc::SmartDashboard::PutData("GrpDriveTest", new GrpDriveTest(&m_drivetrain)  );
+  frc::SmartDashboard::PutData("CmdDriveClearAll", new CmdDriveClearAll(&m_drivetrain)  );
 
   //Default Commands
   m_drivetrain.SetDefaultCommand( CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
