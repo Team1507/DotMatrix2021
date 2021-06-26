@@ -4,10 +4,10 @@
 #include <frc2/command/CommandHelper.h>
 #include "subsystems/Shooter.h"
 #include <frc/XboxController.h>
-class CmdShooterDefult
-    : public frc2::CommandHelper<frc2::CommandBase, CmdShooterDefult> {
+class CmdShooterDefault
+    : public frc2::CommandHelper<frc2::CommandBase, CmdShooterDefault> {
  public:
-  CmdShooterDefult(Shooter *shooter, frc::XboxController *operator_xbox);
+  CmdShooterDefault(Shooter *shooter, frc::XboxController *operator_xbox);
 
   void Initialize() override;
 

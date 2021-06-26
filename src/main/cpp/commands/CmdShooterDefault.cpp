@@ -1,10 +1,10 @@
-#include "commands/CmdShooterDefult.h"
+#include "commands/CmdShooterDefault.h"
 #include "frc/smartdashboard/SmartDashboard.h"
 #include "Constants.h"
 #include "GamepadMap.h"
 #define SHOOTER_kF_CONSTANT 0.0470          //Slightly highter than calculated 0.0467    
 #define SHOOTER_kP_CONSTANT 0.00035  
-CmdShooterDefult::CmdShooterDefult(Shooter *shooter, frc::XboxController *operator_xbox) 
+CmdShooterDefault::CmdShooterDefault(Shooter *shooter, frc::XboxController *operator_xbox) 
 {
     m_ptrShooter = shooter;
     m_ptrOperatorXbox = operator_xbox;
@@ -14,9 +14,9 @@ CmdShooterDefult::CmdShooterDefult(Shooter *shooter, frc::XboxController *operat
     AddRequirements({m_ptrShooter});
 }
 
-void CmdShooterDefult::Initialize() {}
+void CmdShooterDefault::Initialize() {}
 
-void CmdShooterDefult::Execute() 
+void CmdShooterDefault::Execute() 
 {
     //trench is up on DPad
     //down is shooting in the low goal
@@ -183,8 +183,8 @@ void CmdShooterDefult::Execute()
 }
 
 
-void CmdShooterDefult::End(bool interrupted) {}
+void CmdShooterDefault::End(bool interrupted) {}
 
-bool CmdShooterDefult::IsFinished() {
+bool CmdShooterDefault::IsFinished() {
   return false;
 }

@@ -7,10 +7,10 @@
 
 #include <frc/XboxController.h>
 
-class CmdControlPanelDefult
-    : public frc2::CommandHelper<frc2::CommandBase, CmdControlPanelDefult> {
+class CmdControlPanelDefault
+    : public frc2::CommandHelper<frc2::CommandBase, CmdControlPanelDefault> {
  public:
-  CmdControlPanelDefult( ControlPanel *controlPanel, frc::XboxController *operator_xbox);
+  CmdControlPanelDefault( ControlPanel *controlPanel, frc::XboxController *operator_xbox);
 
   void Initialize() override;
 

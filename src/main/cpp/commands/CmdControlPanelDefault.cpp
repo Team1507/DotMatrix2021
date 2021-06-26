@@ -1,4 +1,4 @@
-#include "commands/CmdControlPanelDefult.h"
+#include "commands/CmdControlPanelDefault.h"
 #include <frc/smartdashboard/SmartDashboard.h>
 #include "GamepadMap.h"
 #define BOTTOM_STATE 0
@@ -6,7 +6,7 @@
 #define HOLDING_TOP  2
 #define GOING_DOWN   3
 
-CmdControlPanelDefult::CmdControlPanelDefult( ControlPanel *controlPanel, frc::XboxController *operator_xbox) 
+CmdControlPanelDefault::CmdControlPanelDefault( ControlPanel *controlPanel, frc::XboxController *operator_xbox) 
 {
   m_ptrControlPanel = controlPanel;
   m_ptrOperatorXbox = operator_xbox;
@@ -14,9 +14,9 @@ CmdControlPanelDefult::CmdControlPanelDefult( ControlPanel *controlPanel, frc::X
   AddRequirements({m_ptrControlPanel});
 }
 
-void CmdControlPanelDefult::Initialize() {}
+void CmdControlPanelDefault::Initialize() {}
 
-void CmdControlPanelDefult::Execute() 
+void CmdControlPanelDefault::Execute() 
 {
 
   static int movementState = 0;
@@ -114,8 +114,8 @@ void CmdControlPanelDefult::Execute()
   //frc::SmartDashboard::PutNumber("Spinner Color", GetColor()  );
 }
 
-void CmdControlPanelDefult::End(bool interrupted) {}
+void CmdControlPanelDefault::End(bool interrupted) {}
 
-bool CmdControlPanelDefult::IsFinished() {
+bool CmdControlPanelDefault::IsFinished() {
   return false;
 }
