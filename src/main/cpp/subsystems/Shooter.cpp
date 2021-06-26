@@ -96,7 +96,9 @@ void Shooter::SetShooterVelocity(double velocityRPM)
 
 void Shooter::SetLeftShooterMotor(double power)
 {
-    m_leftShooterMotor.Set(ControlMode::PercentOutput, power );
+
+    //*** KRIS DISABLED SHOOTER HERE***
+    //m_leftShooterMotor.Set(ControlMode::PercentOutput, power );
 }
 
 double Shooter::GetShooterVelocity()

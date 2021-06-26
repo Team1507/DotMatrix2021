@@ -164,6 +164,7 @@ void Robot::WriteToSmartDashboard(void)
 //  frc::SmartDashboard::PutNumber("RightEnc2",m_container.m_drivetrain.GetRightEncoder2());
 
     m_container.m_drivetrain.WriteFalconTemps();
+    m_container.m_shooter.WriteFalconTemps();
 
 }
 

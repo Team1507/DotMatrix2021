@@ -15,6 +15,7 @@
 #include "commands/CmdDriveWithGamepad.h"
 #include "commands/CmdIntakeDefault.h"
 #include "commands/CmdControlPanelDefault.h"
+#include "commands/CmdShooterDefault.h"
 
 
 
@@ -27,10 +28,13 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   frc::SmartDashboard::PutData("GrpDriveTest", new GrpDriveTest(&m_drivetrain)  );
   frc::SmartDashboard::PutData("CmdDriveClearAll", new CmdDriveClearAll(&m_drivetrain)  );
 
+
   //Default Commands
-  m_drivetrain.SetDefaultCommand( CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
-  m_intake.SetDefaultCommand( CmdIntakeDefault( &m_intake, &m_topOperator ) );
+  m_drivetrain.SetDefaultCommand(   CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
+  m_intake.SetDefaultCommand(       CmdIntakeDefault( &m_intake, &m_topOperator ) );
   m_controlPanel.SetDefaultCommand( CmdControlPanelDefault( &m_controlPanel, &m_topOperator));
+  m_shooter.SetDefaultCommand(      CmdShooterDefault( &m_shooter, &m_topOperator ));
+
 
   ConfigureButtonBindings();
 }

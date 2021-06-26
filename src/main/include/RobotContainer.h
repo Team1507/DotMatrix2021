@@ -14,6 +14,7 @@
 #include "subsystems/Drivetrain.h"
 #include "subsystems/Intake.h"
 #include "subsystems/ControlPanel.h"
+#include "subsystems/Shooter.h"
 
 class RobotContainer 
 {
@@ -33,6 +34,7 @@ class RobotContainer
   Drivetrain          m_drivetrain;
   Intake              m_intake;
   ControlPanel        m_controlPanel;
+  Shooter             m_shooter;
 
  private:
   
