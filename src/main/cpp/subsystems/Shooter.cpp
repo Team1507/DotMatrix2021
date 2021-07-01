@@ -26,6 +26,12 @@ void Shooter::Periodic() {}
 
 void Shooter::ShooterInit()
 {
+    frc::SmartDashboard::PutNumber("SHOOTER_LOW_GOAL_VELOCITY",0.5);
+    frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",0.5);
+    frc::SmartDashboard::PutNumber("SHOOTER_TRENCH_VELOCITY",0.5);
+    frc::SmartDashboard::PutNumber("SHOOTER_IDLE_VELOCITY",0.5);
+    frc::SmartDashboard::PutNumber("CAROUSEL_SHOOTING_POWER",0.5);
+    frc::SmartDashboard::PutNumber("FEEDER_POWER",0.25);
     std::cout << "Shooter Init" << std::endl;
     m_leftShooterMotor.ConfigFactoryDefault();
     m_rightShooterMotor.ConfigFactoryDefault();
@@ -98,7 +104,7 @@ void Shooter::SetLeftShooterMotor(double power)
 {
 
     //*** KRIS DISABLED SHOOTER HERE***
-    //m_leftShooterMotor.Set(ControlMode::PercentOutput, power );
+    m_leftShooterMotor.Set(ControlMode::PercentOutput, power );
 }
 
 double Shooter::GetShooterVelocity()

@@ -29,7 +29,7 @@ void CmdIntakeDefault::Execute()
 {
     
     bool isTriggerPressed = m_ptrOperatorXbox->GetRawAxis(  GAMEPADMAP_AXIS_L_TRIG) >= .5;
-    bool isBumperPressed  = m_ptrOperatorXbox->GetRawButton(GAMEPADMAP_BUTTON_LBUMP) ;   
+    bool isBumperPressed  = m_ptrOperatorXbox->GetRawButton(GAMEPADMAP_BUTTON_LBUMP);   
 
     if( isTriggerPressed && !m_isIntaking )
     {
