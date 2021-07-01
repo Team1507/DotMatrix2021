@@ -26,27 +26,22 @@ frc::XboxController m_botDriver{0};
 
 frc::DifferentialDrive m_differentialDrive{ m_leftMotorFront, m_rightMotorFront };
 
-class Robot : public frc::TimedRobot {
-  void RobotInit() override;
-  void RobotPeriodic() override;
-  void DisabledInit() override;
-  void DisabledPeriodic() override;
-  void TeleopInit() override;
-  void TeleopPeriodic() override;
+
+class Poop : public frc::TimedRobot {
+  void RobotInit() override {std::cout<<"Pain train here we come"<<std::endl;}
+  void RobotPeriodic() override{}
+  void DisabledInit() override{}
+  void DisabledPeriodic() override{}
+  void TeleopInit() override{}
+  void TeleopPeriodic() override{}
 };
 
-void Robot::RobotInit(){std::cout<<"pain train here we come"<<std::endl;}
-void Robot::RobotPeriodic(){}
-void Robot::DisabledInit(){}
-void Robot::DisabledPeriodic(){}
-void Robot::TeleopInit(){}
-void Robot::TeleopPeriodic(){}
 
 
 #ifndef RUNNING_FRC_TESTS
 int main() 
 {
-  return frc::StartRobot<Robot>();
+  return frc::StartRobot<Poop>();
 }
 #endif
 
