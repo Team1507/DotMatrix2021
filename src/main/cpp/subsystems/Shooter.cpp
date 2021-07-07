@@ -26,12 +26,12 @@ void Shooter::Periodic() {}
 
 void Shooter::ShooterInit()
 {
-    frc::SmartDashboard::PutNumber("SHOOTER_LOW_GOAL_VELOCITY",0.5);
-    frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",0.5);
-    frc::SmartDashboard::PutNumber("SHOOTER_TRENCH_VELOCITY",0.5);
-    frc::SmartDashboard::PutNumber("SHOOTER_IDLE_VELOCITY",0.5);
-    frc::SmartDashboard::PutNumber("CAROUSEL_SHOOTING_POWER",0.5);
-    frc::SmartDashboard::PutNumber("FEEDER_POWER",0.25);
+    frc::SmartDashboard::PutNumber("SHOOTER_LOW_GOAL_VELOCITY",10);
+    frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",10);
+    frc::SmartDashboard::PutNumber("SHOOTER_TRENCH_VELOCITY",10); //changed from 2000
+    frc::SmartDashboard::PutNumber("SHOOTER_IDLE_VELOCITY",10);
+    frc::SmartDashboard::PutNumber("CAROUSEL_SHOOTING_POWER",0.8);
+    frc::SmartDashboard::PutNumber("FEEDER_POWER",0.8);
     std::cout << "Shooter Init" << std::endl;
     m_leftShooterMotor.ConfigFactoryDefault();
     m_rightShooterMotor.ConfigFactoryDefault();
@@ -112,9 +112,13 @@ double Shooter::GetShooterVelocity()
     return m_leftShooterMotor.GetSelectedSensorVelocity(SHOOTER_PID_SLOT);
 }
 
-double Shooter::GetShooterPower()
+double Shooter::GetLeftShooterPower()
 {
     return m_leftShooterMotor.GetMotorOutputPercent();
+}
+double Shooter::GetRightShooterPower()
+{
+    return m_rightShooterMotor.GetMotorOutputPercent();
 }
 double Shooter::GetShooterRPM()
 {
@@ -204,6 +208,8 @@ void Shooter::SetHood(int angle)
 
 void Shooter::WriteFalconTemps(void)
 {
+    frc::SmartDashboard::PutNumber("Left Shooter Power",m_leftShooterMotor.GetMotorOutputPercent());
+    frc::SmartDashboard::PutNumber("Right Shooter Power",m_rightShooterMotor.GetMotorOutputPercent());
     frc::SmartDashboard::PutNumber("FalconTemp LSM", m_leftShooterMotor.GetTemperature() );
     frc::SmartDashboard::PutNumber("FalconTemp RSM", m_rightShooterMotor.GetTemperature() );
 }

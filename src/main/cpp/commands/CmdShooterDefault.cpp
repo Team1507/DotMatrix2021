@@ -161,21 +161,24 @@ void CmdShooterDefault::Execute()
         
 
         double curr_vel = m_ptrShooter->GetShooterVelocity();
-        double curr_pow = m_ptrShooter->GetShooterPower();
+        double curr_pow = m_ptrShooter->GetLeftShooterPower();
 
         double v_error  = m_ptrShooter->GetShooterRPM()*1000 - curr_vel;
-
+        frc::SmartDashboard::PutNumber("v error", v_error); 
         if( v_error > MAX_POS_ERROR )   v_error = MAX_POS_ERROR;
         if( v_error < MAX_NEG_ERROR )   v_error = MAX_NEG_ERROR;   
         
         double shoot_power = (m_ptrShooter->GetShooterRPM() * SHOOTER_kF_CONSTANT) + ( v_error * SHOOTER_kP_CONSTANT );
-
+        frc::SmartDashboard::PutNumber("shoot Power",shoot_power);
         if( shoot_power < curr_pow ) shoot_power-= 0.01;    //Ramp down slowly to prevent belt slip
-
+        
         if( shoot_power > 1.0 ) shoot_power = 1.0;
         if( shoot_power < 0.0 ) shoot_power = 0.0;
 
         m_ptrShooter->SetLeftShooterMotor(shoot_power);
+        
+        frc::SmartDashboard::PutNumber("Curr Pow", curr_pow);
+        frc::SmartDashboard::PutNumber("curr vel", curr_vel);
     }
     
 
