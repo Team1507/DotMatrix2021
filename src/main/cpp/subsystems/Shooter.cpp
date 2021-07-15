@@ -143,6 +143,7 @@ void Shooter::SetFeederVelocity(double velocityRPM)
 void Shooter::SetFeederPower(double power)
 {
     double tempP = frc::SmartDashboard::GetNumber("FEEDER_POWER", 0);
+    std::cout<<tempP<<std::endl;
     m_feederMotor.Set(ControlMode::PercentOutput ,tempP);
 }
 
