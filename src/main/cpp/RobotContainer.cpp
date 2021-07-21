@@ -24,7 +24,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
 
   //Smartdashboard Button
   frc::SmartDashboard::PutData("TestCmd1",  new CmdTest1() );
-  frc::SmartDashboard::PutData("TestGroup", new GrpTest()  );
+  frc::SmartDashboard::PutData("TestGroup", new GrpTest(&m_drivetrain)  );
   frc::SmartDashboard::PutData("GrpDriveTest", new GrpDriveTest(&m_drivetrain)  );
   frc::SmartDashboard::PutData("CmdDriveClearAll", new CmdDriveClearAll(&m_drivetrain)  );
 

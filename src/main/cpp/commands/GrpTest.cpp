@@ -3,25 +3,29 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "commands/GrpTest.h"
-
+#include "commands/CmdDriveManual.h"
 #include "commands/CmdPrintAutoText.h"
 #include <frc2/command/WaitCommand.h>
 
 
-GrpTest::GrpTest() 
+GrpTest::GrpTest(Drivetrain *drivetrain) 
 {
 
   AddCommands(
 
     CmdPrintAutoText("Running GrpTest"),
 
-    frc2::WaitCommand( units::second_t(2.0)  ),
+    //frc2::WaitCommand( units::second_t(2.0)  ),
 
-    CmdPrintAutoText(" ON!"),
+    //CmdPrintAutoText(" ON!"),
 
-    frc2::WaitCommand( units::second_t(2.0)  ),
+    //frc2::WaitCommand( units::second_t(2.0)  ),
 
-    CmdPrintAutoText("OFF"),
+    //CmdPrintAutoText("OFF"),
+
+
+
+    CmdDriveManual(drivetrain, .5 , .5 , 0.5),
 
     CmdPrintAutoText("GrpTest Complete")
 

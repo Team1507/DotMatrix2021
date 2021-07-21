@@ -57,10 +57,11 @@ class Shooter : public frc2::SubsystemBase {
     private:
         TalonFX m_leftShooterMotor  {LEFT_SHOOTER_FALCON_ID};
         TalonFX m_rightShooterMotor {RIGHT_SHOOTER_FALCON_ID};
-        TalonSRX m_feederMotor      {FEEDER_CAN_ID};
+        //TalonSRX m_feederMotor      {FEEDER_CAN_ID};
 
         VictorSPX m_carouselMotor   {CAROUSEL_CAN_ID};
-
+        VictorSPX m_feederMotor     {FEEDER_CAN_ID};
+        
         frc::Solenoid m_shooterramp     {PCM_CAN_ID,PCM_RAMP_ID};
      
         bool m_isShooting;

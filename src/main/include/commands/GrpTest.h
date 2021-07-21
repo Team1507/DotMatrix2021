@@ -3,7 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #pragma once
-
+#include "subsystems/Drivetrain.h"
 #include <frc2/command/CommandHelper.h>
 #include <frc2/command/SequentialCommandGroup.h>
 
@@ -11,5 +11,8 @@ class GrpTest
     : public frc2::CommandHelper<frc2::SequentialCommandGroup,
                                  GrpTest> {
  public:
-  GrpTest();
+  GrpTest(Drivetrain *drivetrain);
+
+ 
+  
 };
