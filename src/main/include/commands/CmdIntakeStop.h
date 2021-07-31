@@ -4,10 +4,10 @@
 #include <frc2/command/CommandHelper.h>
 #include "subsystems/Intake.h"
 
-class CmdSetIntake
-    : public frc2::CommandHelper<frc2::CommandBase, CmdSetIntake> {
+class CmdIntakeStop
+    : public frc2::CommandHelper<frc2::CommandBase, CmdIntakeStop> {
  public:
-  CmdSetIntake(bool isRunning, Intake *intake);
+  CmdIntakeStop(Intake *intake);
 
   void Initialize() override;
 
@@ -17,6 +17,5 @@ class CmdSetIntake
 
   bool IsFinished() override;
   private:
-   bool m_isRunning;
    Intake *m_ptrIntake;
 };
