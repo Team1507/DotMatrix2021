@@ -11,9 +11,10 @@ const double PI  = 3.14159265;
 
 //Drivetrain Constants
 //Encoder TICKS PER INCH Calibration
-const int Drivetrain::LEFT_ENCODER_TPI  = 1153;			//*** Calibrated 3/3/2020
-const int Drivetrain::RIGHT_ENCODER_TPI = 1153;			//*** Calibrated 3/3/2020
+const int    Drivetrain::LEFT_ENCODER_TPI  = 1153;			//*** Calibrated 3/3/2020
+const int    Drivetrain::RIGHT_ENCODER_TPI = 1153;			//*** Calibrated 3/3/2020
 
+const double Drivetrain::RAMP_FACTOR       = 0.03;         //Drive Acceleration Ramp Factor
 
 Drivetrain::Drivetrain()
 {

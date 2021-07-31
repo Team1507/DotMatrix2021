@@ -21,8 +21,9 @@ class Drivetrain : public frc2::SubsystemBase {
   void Periodic() override;
 
   //Drivetrain Constants
-  const static int LEFT_ENCODER_TPI;       //"Ticks per inch"
-  const static int RIGHT_ENCODER_TPI; 
+  const static int    LEFT_ENCODER_TPI;       //"Ticks per inch"
+  const static int    RIGHT_ENCODER_TPI; 
+  const static double RAMP_FACTOR;
 
   //Support Functions
   void InitFalcons(void);
