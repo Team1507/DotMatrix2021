@@ -4,6 +4,9 @@
 
 #pragma once
 #include "subsystems/Drivetrain.h"
+#include "subsystems/Shooter.h"
+#include "subsystems/Intake.h"
+
 #include <frc2/command/CommandHelper.h>
 #include <frc2/command/SequentialCommandGroup.h>
 
@@ -11,7 +14,7 @@ class GrpTest
     : public frc2::CommandHelper<frc2::SequentialCommandGroup,
                                  GrpTest> {
  public:
-  GrpTest(Drivetrain *drivetrain);
+  GrpTest(Drivetrain *drivetrain, Shooter *shooter, Intake *intake);
 
  
   

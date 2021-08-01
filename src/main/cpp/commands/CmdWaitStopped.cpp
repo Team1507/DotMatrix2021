@@ -20,7 +20,8 @@ void CmdWaitStopped::Initialize()
 void CmdWaitStopped::Execute() 
 {
     //Continuously update drivertrain so we don't get MotorSaftey Errors
-    m_ptrDrivetrain->Stop();
+    // m_ptrDrivetrain->Stop();              //This prints stop to stdout every execute.
+    m_ptrDrivetrain->Drive( 0.0, 0.0 );
 }
 
 // Called once the command ends or is interrupted.
