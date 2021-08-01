@@ -26,13 +26,15 @@ void Shooter::Periodic() {}
 
 void Shooter::ShooterInit()
 {
+    std::cout << "Shooter Init" << std::endl;
+
     frc::SmartDashboard::PutNumber("SHOOTER_LOW_GOAL_VELOCITY",10);
     frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",10);
     frc::SmartDashboard::PutNumber("SHOOTER_TRENCH_VELOCITY",10); //changed from 2000
     frc::SmartDashboard::PutNumber("SHOOTER_IDLE_VELOCITY",10);
     frc::SmartDashboard::PutNumber("CAROUSEL_SHOOTING_POWER",0.8);
     frc::SmartDashboard::PutNumber("FEEDER_POWER",0.8);
-    std::cout << "Shooter Init" << std::endl;
+
     m_leftShooterMotor.ConfigFactoryDefault();
     m_rightShooterMotor.ConfigFactoryDefault();
     m_feederMotor.ConfigFactoryDefault();
@@ -87,7 +89,7 @@ void Shooter::SetShooterVelocity(double velocityRPM)
 {
     //**** NOTE ***  THIS IS SHOOTER POWER FOR NOW, not velocity
     //m_leftShooterMotor.Set(ControlMode::PercentOutput, velocityRPM );
-    std::cout<<"Here!!! " << velocityRPM << std::endl;
+    //std::cout<<"Here!!! " << velocityRPM << std::endl;
     m_shooterRPM = velocityRPM;
 
 //    // rpm --> ticks per 100ms, 2048 ticks/revolution, 600 revs/ 100ms
@@ -102,8 +104,6 @@ void Shooter::SetShooterVelocity(double velocityRPM)
 
 void Shooter::SetLeftShooterMotor(double power)
 {
-
-    //*** KRIS DISABLED SHOOTER HERE***
     m_leftShooterMotor.Set(ControlMode::PercentOutput, power );
 }
 
@@ -143,7 +143,6 @@ void Shooter::SetFeederVelocity(double velocityRPM)
 void Shooter::SetFeederPower(double power)
 {
     double tempP = frc::SmartDashboard::GetNumber("FEEDER_POWER", 0);
-    std::cout<<tempP<<std::endl;
     m_feederMotor.Set(ControlMode::PercentOutput ,tempP);
 }
 

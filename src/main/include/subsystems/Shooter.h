@@ -11,16 +11,16 @@
 #define FEEDER_SHOOTING_POWER     1.0 
 
 //These are velocities in Falcon (units/100ms)/1000  <<==notice divided by 1000
+                                                    //SHOULD BE - Low power for testing
+#define SHOOTER_AUTO_LINE_VELOCITY      10          ///19.5
+#define SHOOTER_AUTO_TRENCH_VELOCITY    10          //17  
 
-#define SHOOTER_AUTO_LINE_VELOCITY      19.5
-#define SHOOTER_AUTO_TRENCH_VELOCITY    17  
+#define SHOOTER_LINE_VELOCITY           10          //20
+#define SHOOTER_TRENCH_VELOCITY         10          //17 
 
-#define SHOOTER_LINE_VELOCITY       20
-#define SHOOTER_TRENCH_VELOCITY     17 
-
-#define SHOOTER_LOW_GOAL_VELOCITY 10
-#define SHOOTER_IDLE_VELOCITY     10
-#define SHOOTER_ZERO_VELOCITY     0
+#define SHOOTER_LOW_GOAL_VELOCITY       10          //10
+#define SHOOTER_IDLE_VELOCITY           5           //10
+#define SHOOTER_ZERO_VELOCITY           0
 
 #define LINE_HOOD_ANGLE           129  
 #define TRENCH_HOOD_ANGLE         111 

@@ -36,6 +36,13 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   m_shooter.SetDefaultCommand(      CmdShooterDefault( &m_shooter, &m_topOperator ));
 
 
+  //Auto
+  m_chooser.SetDefaultOption("Auto Do Nothing",  &m_autoDoNothing );
+  m_chooser.AddOption("Auto Just Shoot", &m_autoJustShoot );
+
+  // Put the chooser on the dashboard
+  frc::SmartDashboard::PutData(&m_chooser);
+
   ConfigureButtonBindings();
 }
 
@@ -52,6 +59,6 @@ void RobotContainer::ConfigureButtonBindings()
 
 frc2::Command* RobotContainer::GetAutonomousCommand() 
 {
-  
-  return &m_autonomousCommand;
+  return m_chooser.GetSelected();
+  //return &m_autonomousCommand;
 }

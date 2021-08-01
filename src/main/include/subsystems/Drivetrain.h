@@ -49,6 +49,7 @@ class Drivetrain : public frc2::SubsystemBase {
   double GetGyroAngle(void);          //angle: absolute -inf to +inf
   double GetGyroRate(void);
   void   ZeroGyro(void); 
+  bool   IsGyroBusy(void);            //Busy Calibrating
   
   //Odometry
   void    ResetOdometry(void);

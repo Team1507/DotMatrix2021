@@ -190,9 +190,14 @@ double Drivetrain::GetGyroRate(void)
 void Drivetrain::ZeroGyro(void)
 {
   	std::cout<<"ZeroGyro"<<std::endl;
-	m_ahrs.ZeroYaw();
+	//m_ahrs.ZeroYaw();
+    m_ahrs.Reset();
 }
 
+bool Drivetrain::IsGyroBusy(void)
+{
+    return m_ahrs.IsCalibrating();
+}
 
 
 //**************** Odometry *********************
