@@ -19,11 +19,11 @@
 
 #include "commands/CmdDriveFwdGyroV2.h"
 #include "commands/CmdDriveRevGyroV2.h"
-//#include "commands/CmdTurnToLimelight.h"
+#include "commands/CmdDriveTurn2Limelight.h"
 
 
 
-AutoJustShoot::AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter) 
+AutoJustShoot::AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter, Limelight *limelight) 
 {
   AddCommands(
     
@@ -42,7 +42,8 @@ AutoJustShoot::AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter)
     //Set shooter to shoot velocity and aim at target
     CmdShooterSetVelocity(shooter, SHOOTER_AUTO_LINE_VELOCITY),
     CmdWaitStopped(drivetrain, 2.0),
-    //CmdTurnToLimelight(),       <<<  STILL NEED TO IMPLIMENT THIS!!!!!!
+    
+    CmdDriveTurn2Limelight(drivetrain,limelight),      
 
     //so anyway, I started blastin'
     CmdCarouselSetPower(shooter, CAROUSEL_SHOOTING_POWER), 

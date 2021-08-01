@@ -9,11 +9,12 @@
 
 #include "subsystems/Drivetrain.h"
 #include "subsystems/Shooter.h"
+#include "subsystems/Limelight.h"
 
 
 class AutoJustShoot
     : public frc2::CommandHelper<frc2::SequentialCommandGroup,
                                  AutoJustShoot> {
  public:
-  AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter);
+  AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter, Limelight *limelight);
 };

@@ -16,6 +16,7 @@
 #include "subsystems/Intake.h"
 #include "subsystems/ControlPanel.h"
 #include "subsystems/Shooter.h"
+#include "subsystems/Limelight.h"
 
 //Auto
 #include "commands/AutoDoNothing.h"
@@ -37,6 +38,7 @@ class RobotContainer
   Intake              m_intake;
   ControlPanel        m_controlPanel;
   Shooter             m_shooter;
+  Limelight           m_limelight;
 
 
   //Autonomous Setup
@@ -45,7 +47,7 @@ class RobotContainer
 
   //List Auto Commands here
   AutoDoNothing m_autoDoNothing{ &m_drivetrain };
-  AutoJustShoot m_autoJustShoot{ &m_drivetrain, &m_shooter };
+  AutoJustShoot m_autoJustShoot{ &m_drivetrain, &m_shooter, &m_limelight };
 
 
  private:
