@@ -17,6 +17,7 @@
 #include "subsystems/ControlPanel.h"
 #include "subsystems/Shooter.h"
 #include "subsystems/Limelight.h"
+#include "subsystems/Climber.h"
 
 //Auto
 #include "commands/AutoDoNothing.h"
@@ -39,7 +40,7 @@ class RobotContainer
   ControlPanel        m_controlPanel;
   Shooter             m_shooter;
   Limelight           m_limelight;
-
+  Climber             m_climber;
 
   //Autonomous Setup
   frc2::Command* GetAutonomousCommand();

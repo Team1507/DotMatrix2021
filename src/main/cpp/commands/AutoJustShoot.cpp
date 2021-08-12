@@ -43,7 +43,7 @@ AutoJustShoot::AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter, Limelight
     CmdShooterSetVelocity(shooter, SHOOTER_AUTO_LINE_VELOCITY),
     CmdWaitStopped(drivetrain, 2.0),
     
-    CmdDriveTurn2Limelight(drivetrain,limelight),      
+    //CmdDriveTurn2Limelight(drivetrain,limelight),      
 
     //so anyway, I started blastin'
     CmdCarouselSetPower(shooter, CAROUSEL_SHOOTING_POWER), 

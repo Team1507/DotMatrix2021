@@ -16,6 +16,7 @@
 #include "commands/CmdIntakeDefault.h"
 #include "commands/CmdControlPanelDefault.h"
 #include "commands/CmdShooterDefault.h"
+#include "commands/CmdClimberDefault.h"
 
 
 
@@ -34,7 +35,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   m_intake.SetDefaultCommand(       CmdIntakeDefault( &m_intake, &m_topOperator ) );
   m_controlPanel.SetDefaultCommand( CmdControlPanelDefault( &m_controlPanel, &m_topOperator));
   m_shooter.SetDefaultCommand(      CmdShooterDefault( &m_shooter, &m_topOperator ));
-
+  m_climber.SetDefaultCommand( CmdClimberDefault(&m_climber, &m_topOperator,&m_botDriver));
 
   //Auto
   m_chooser.SetDefaultOption("Auto Do Nothing",  &m_autoDoNothing );
