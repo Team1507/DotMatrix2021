@@ -22,6 +22,7 @@
 //Auto
 #include "commands/AutoDoNothing.h"
 #include "commands/AutoJustShoot.h"
+#include "commands/AutoTrenchToLine.h"
 
 class RobotContainer 
 {
@@ -49,6 +50,7 @@ class RobotContainer
   //List Auto Commands here
   AutoDoNothing m_autoDoNothing{ &m_drivetrain };
   AutoJustShoot m_autoJustShoot{ &m_drivetrain, &m_shooter, &m_limelight };
+  AutoTrenchToLine m_autoTrenchToLine{ &m_drivetrain, &m_shooter, &m_limelight, &m_intake };
 
 
  private:
