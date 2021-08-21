@@ -11,6 +11,8 @@ void Robot::RobotInit()
     std::cout<<"Version: " << __DATE__ <<"  "<<__TIME__<<std::endl<<std::endl; 
 
   //Julia was here
+  //Kris Was here too!
+
 
     m_container.m_ledPanel.SetAllLEDColor(255,255,0);  //Yellow
     m_container.m_drivetrain.InitFalcons();
