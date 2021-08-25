@@ -4,6 +4,7 @@
 
 #include "commands/CmdIntakeDefault.h"
 #include "GamepadMap.h"
+#include "frc/smartdashboard/SmartDashboard.h"
 
 CmdIntakeDefault::CmdIntakeDefault(Intake *intake, frc::XboxController *operator_xbox) 
 {
@@ -21,7 +22,7 @@ CmdIntakeDefault::CmdIntakeDefault(Intake *intake, frc::XboxController *operator
 
 void CmdIntakeDefault::Initialize() 
 {
-
+  frc::SmartDashboard::PutNumber("INTAKE_POWER", 0.7);
 }
 
 

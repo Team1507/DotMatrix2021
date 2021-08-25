@@ -23,7 +23,7 @@
 #include "commands/AutoDoNothing.h"
 #include "commands/AutoJustShoot.h"
 #include "commands/AutoTrenchToLine.h"
-
+#include "commands/AutoBallAtTrench.h"
 class RobotContainer 
 {
  public:
@@ -51,7 +51,7 @@ class RobotContainer
   AutoDoNothing m_autoDoNothing{ &m_drivetrain };
   AutoJustShoot m_autoJustShoot{ &m_drivetrain, &m_shooter, &m_limelight };
   AutoTrenchToLine m_autoTrenchToLine{ &m_drivetrain, &m_shooter, &m_limelight, &m_intake };
-
+  AutoBallAtTrench m_autoBallAtTrench{ &m_drivetrain, &m_shooter, &m_limelight, &m_intake };
 
  private:
   ExampleSubsystem m_subsystem;

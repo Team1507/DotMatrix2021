@@ -24,7 +24,7 @@ void Intake::Periodic() {}
 void Intake::IntakeBackward()
 {
     //temp code to read off the smart dashboard
-    double percent = (frc::SmartDashboard::GetNumber(" REV INTAKE_POWER", 0));
+    double percent = (frc::SmartDashboard::GetNumber("INTAKE_POWER", 0.7));
     m_intakeMotor.Set(ControlMode::PercentOutput, percent);   
     //m_intakeMotor.Set(ControlMode::PercentOutput, INTAKE_PERCENT);
 }
@@ -39,7 +39,7 @@ void Intake::IntakeStop()
 void Intake::IntakeForward()
 {
     //temp code to read off the smart dashboard
-    double percent = -(frc::SmartDashboard::GetNumber("FWD INTAKE_POWER", 0));
+    double percent = -(frc::SmartDashboard::GetNumber("INTAKE_POWER", 0.7));
     m_intakeMotor.Set(ControlMode::PercentOutput, percent);   
     //m_intakeMotor.Set(ControlMode::PercentOutput, -INTAKE_PERCENT);
 }
