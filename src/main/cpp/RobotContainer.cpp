@@ -8,7 +8,7 @@
 #include "commands/GrpTest.h"
 #include "commands/GrpDriveTest.h"
 #include "commands/CmdDriveClearAll.h"
-
+#include "commands/CmdDriveTurn2Limelight.h"
 
 
 //Default Commands
@@ -28,7 +28,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   frc::SmartDashboard::PutData("TestGroup", new GrpTest(&m_drivetrain,&m_shooter,&m_intake)  );
   frc::SmartDashboard::PutData("GrpDriveTest", new GrpDriveTest(&m_drivetrain)  );
   frc::SmartDashboard::PutData("CmdDriveClearAll", new CmdDriveClearAll(&m_drivetrain)  );
-
+  frc::SmartDashboard::PutData("TurnToLimelight", new CmdDriveTurn2Limelight(&m_drivetrain, &m_limelight));
 
   //Default Commands
   m_drivetrain.SetDefaultCommand(   CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
@@ -50,7 +50,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
 
 void RobotContainer::ConfigureButtonBindings() 
 {
-  m_btn_driver_A.WhenPressed(  frc2::PrintCommand("A button was pressed")  );
+  m_btn_driver_A.WhenPressed(CmdDriveTurn2Limelight(&m_drivetrain, &m_limelight)  );
 
   m_btn_driver_B.WhenPressed(  frc2::PrintCommand("B button was pressed")  ).WhenReleased(  frc2::PrintCommand("B button was Released")  );
 
