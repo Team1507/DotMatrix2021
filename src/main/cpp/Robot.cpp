@@ -19,7 +19,7 @@ void Robot::RobotInit()
     m_container.m_drivetrain.ZeroGyro(); 
     m_container.m_drivetrain.ResetOdometry();
     m_container.m_shooter.ShooterInit();
-
+    m_container.m_limelight.LimelightInit();
  }
 
 

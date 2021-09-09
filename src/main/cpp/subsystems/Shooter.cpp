@@ -29,7 +29,7 @@ void Shooter::ShooterInit()
     std::cout << "Shooter Init" << std::endl;
 
     frc::SmartDashboard::PutNumber("SHOOTER_LOW_GOAL_VELOCITY",10);
-    frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",10);
+    frc::SmartDashboard::PutNumber("SHOOTER_LINE_VELOCITY",15);
     frc::SmartDashboard::PutNumber("SHOOTER_TRENCH_VELOCITY",10); //changed from 2000
     frc::SmartDashboard::PutNumber("SHOOTER_IDLE_VELOCITY",10);
     frc::SmartDashboard::PutNumber("CAROUSEL_SHOOTING_POWER",0.7);

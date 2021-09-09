@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "commands/CmdDriveTurn2Limelight.h"
+#include "frc/smartdashboard/SmartDashboard.h"
 
 
 #define TOLRENCEZONE 0.5               //was 0.17
@@ -23,7 +24,7 @@ void CmdDriveTurn2Limelight::Initialize()
 
     std::cout<< "CmdDriveTurn2Limelight Init" << std::endl;
 
-    double camera_offset = 0.0;   //frc::SmartDashboard::GetNumber( "LimelightOffset", 0.0 );
+    double camera_offset = frc::SmartDashboard::GetNumber( "LimelightOffset", 0.0 );
 
     bool isTarget = m_ptrLimelight->IsTarget();
 
