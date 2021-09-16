@@ -15,7 +15,7 @@
 #define SHOOTER_AUTO_LINE_VELOCITY      10          ///19.5
 #define SHOOTER_AUTO_TRENCH_VELOCITY    10          //17  
 
-#define SHOOTER_LINE_VELOCITY           15          //20
+#define SHOOTER_LINE_VELOCITY           19          //20
 #define SHOOTER_TRENCH_VELOCITY         10          //17 
 
 #define SHOOTER_LOW_GOAL_VELOCITY       10          //10

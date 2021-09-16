@@ -39,20 +39,22 @@ AutoTrenchToLine::AutoTrenchToLine(Drivetrain *drivetrain, Shooter *shooter, Lim
     //Drive back
     CmdDriveRevGyroV2( drivetrain, 0.4, 0.0, 132, true, true, 0.0),
     CmdWaitStopped(drivetrain, 0.1),
-
-    //Drive Fwd
-    CmdDriveFwdGyroV2(drivetrain, .4, -7.0, 25, true, false, 0.0),
-    
-    
     //Spin up the shooter
     CmdShooterSetVelocity(shooter, SHOOTER_LINE_VELOCITY),
 
-    CmdDriveFwdGyroV2(drivetrain, .4, -90.0, 72, false, false, 0.0),
+    //Drive Fwd
+    CmdDriveFwdGyroV2(drivetrain, .4, -7.0, 90, true, false, 0.0),
+    ///CmdWaitStopped(drivetrain, 0.1),
+    
+    
+    
 
+    CmdDriveFwdGyroV2(drivetrain, .4, -30.0, 32, false, false, 0.0),
+    CmdWaitStopped(drivetrain, 0.1),
 
     //Turn Toward Target
-    CmdDriveFwdGyroV2(drivetrain,.4, 25.0, 60, false, false, 0.0),
-    CmdDriveFwdGyroV2(drivetrain,.4, 0, 2, false, true, 0.0),
+    ///CmdDriveFwdGyroV2(drivetrain,.4, 25.0, 60, false, false, 0.0),
+    CmdDriveFwdGyroV2(drivetrain,.4, 0, 2, false, false, 0.0),
 
     CmdWaitStopped(drivetrain, 3.0),
     CmdDriveTurn2Limelight(drivetrain, limelight),
