@@ -111,7 +111,7 @@ void CmdControlPanelDefault::Execute()
 
 
   frc::SmartDashboard::PutNumber("Spinner Encoder", m_ptrControlPanel->GetSpinnerEncoder()  );
-  //frc::SmartDashboard::PutNumber("Spinner Color", GetColor()  );
+  frc::SmartDashboard::PutNumber("Spinner Color", m_ptrControlPanel->GetColor()  );
 }
 
 void CmdControlPanelDefault::End(bool interrupted) {}

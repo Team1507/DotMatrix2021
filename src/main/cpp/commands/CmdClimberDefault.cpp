@@ -1,7 +1,7 @@
 #define LIGHTSABER_UP_MULTIPLIER   .5
 #define LIGHTSABER_DOWN_MULTIPLIER .25
-#define WINCH_POWER 0.1
-#define REVERSE_WINCH_POWER 0.1
+#define WINCH_POWER 1.0
+#define REVERSE_WINCH_POWER 0.4
 #include "commands/CmdClimberDefault.h"
 #include <frc/smartdashboard/SmartDashboard.h>
 #include "GamepadMap.h"

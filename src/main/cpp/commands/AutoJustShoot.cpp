@@ -59,7 +59,7 @@ AutoJustShoot::AutoJustShoot(Drivetrain *drivetrain, Shooter *shooter, Limelight
 
 
     //move off the line;
-    CmdDriveFwdGyroV2( drivetrain, 0.4 , 0, 72 , true, true , 0.0 ) ,   //48+24=72
+    //CmdDriveFwdGyroV2( drivetrain, 0.4 , 0, 72 , true, true , 0.0 ) ,   //48+24=72
 
 
 

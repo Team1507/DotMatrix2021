@@ -18,7 +18,7 @@ void Limelight::Periodic() {}
 
 void Limelight::LimelightInit(void) 
 {
-    frc::SmartDashboard::PutNumber( "LimelightOffset", 1.5 );
+    frc::SmartDashboard::PutNumber( "LimelightOffset", -1.5 );
 }
 
 bool Limelight::IsTarget(void)

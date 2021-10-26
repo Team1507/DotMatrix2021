@@ -57,6 +57,10 @@ AutoTrenchToLine::AutoTrenchToLine(Drivetrain *drivetrain, Shooter *shooter, Lim
     CmdDriveFwdGyroV2(drivetrain,.4, 0, 2, false, false, 0.0),
 
     CmdWaitStopped(drivetrain, 3.0),
+    //Fix Potential Jam
+    //CmdCarouselSetPower(shooter, CAROUSEL_REVERSE_POWER),
+    
+    //Turn to Target
     CmdDriveTurn2Limelight(drivetrain, limelight),
 
     //shoot

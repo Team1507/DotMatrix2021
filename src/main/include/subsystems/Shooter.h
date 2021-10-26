@@ -9,17 +9,18 @@
 #define CAROUSEL_SHOOTING_POWER   0.6  
 #define CAROUSEL_IDLE_POWER       0.3  
 #define FEEDER_SHOOTING_POWER     1.0 
+#define CAROUSEL_REVERSE_POWER    -0.5
 
 //These are velocities in Falcon (units/100ms)/1000  <<==notice divided by 1000
-                                                    //SHOULD BE - Low power for testing
-#define SHOOTER_AUTO_LINE_VELOCITY      10          ///19.5
-#define SHOOTER_AUTO_TRENCH_VELOCITY    10          //17  
+                                                    //Changed back to original 
+#define SHOOTER_AUTO_LINE_VELOCITY      19.5          ///19.5
+#define SHOOTER_AUTO_TRENCH_VELOCITY    17          //17  
 
-#define SHOOTER_LINE_VELOCITY           19          //20
-#define SHOOTER_TRENCH_VELOCITY         10          //17 
+#define SHOOTER_LINE_VELOCITY           20          //20
+#define SHOOTER_TRENCH_VELOCITY         17          //17 
 
 #define SHOOTER_LOW_GOAL_VELOCITY       10          //10
-#define SHOOTER_IDLE_VELOCITY           5           //10
+#define SHOOTER_IDLE_VELOCITY           10           //10
 #define SHOOTER_ZERO_VELOCITY           0
 
 #define LINE_HOOD_ANGLE           129  
