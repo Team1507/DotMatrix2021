@@ -43,7 +43,7 @@ AutoTrenchToLine::AutoTrenchToLine(Drivetrain *drivetrain, Shooter *shooter, Lim
     CmdShooterSetVelocity(shooter, SHOOTER_LINE_VELOCITY),
 
     //Drive Fwd
-    CmdDriveFwdGyroV2(drivetrain, .4, -7.0, 90, true, false, 0.0),
+    CmdDriveFwdGyroV2(drivetrain, .4, -7.0, 80, true, false, 0.0),
     ///CmdWaitStopped(drivetrain, 0.1),
     
     
@@ -57,6 +57,7 @@ AutoTrenchToLine::AutoTrenchToLine(Drivetrain *drivetrain, Shooter *shooter, Lim
     CmdDriveFwdGyroV2(drivetrain,.4, 0, 2, false, false, 0.0),
 
     CmdWaitStopped(drivetrain, 3.0),
+
     //Fix Potential Jam
     //CmdCarouselSetPower(shooter, CAROUSEL_REVERSE_POWER),
     
