@@ -7,6 +7,7 @@
 #include <networktables/NetworkTable.h>
 #include <networktables/NetworkTableInstance.h>
 #include "frc/smartdashboard/SmartDashboard.h"
+#include <math.h>
 
 
 Limelight::Limelight() 
@@ -33,3 +34,16 @@ double Limelight::GetHOffset(void)
 //  return m_ptrTable->GetNumber("tx", 0);
 }
 
+double Limelight::GetDistance(void)
+{
+    const double a1 = 68.4;
+    const double h1 = 23.75;
+    const double h2 = 101.625;
+    double a2 = nt::NetworkTableInstance::GetDefault().GetTable("limelight")->GetNumber("ty", 0);
+    return (h2-h1)/tan(a1+a2);
+}
+
+double Limelight::GetVAngle(void)
+{
+    return nt::NetworkTableInstance::GetDefault().GetTable("limelight")->GetNumber("ty", 0);
+}

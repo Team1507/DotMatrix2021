@@ -164,6 +164,10 @@ void Robot::WriteToSmartDashboard(void)
     frc::SmartDashboard::PutNumber("RightEnc", m_container.m_drivetrain.GetRightEncoder());  
 //  frc::SmartDashboard::PutNumber("RightEnc2",m_container.m_drivetrain.GetRightEncoder2());
 
+  //
+    frc::SmartDashboard::PutNumber("HOffset" , m_container.m_limelight.GetHOffset() );
+    frc::SmartDashboard::PutNumber("Distance", m_container.m_limelight.GetDistance());
+    frc::SmartDashboard::PutNumber("VAngle"  , m_container.m_limelight.GetVAngle()  );
     m_container.m_drivetrain.WriteFalconTemps();
     m_container.m_shooter.WriteFalconTemps();
 

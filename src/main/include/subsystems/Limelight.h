@@ -15,7 +15,8 @@ class Limelight : public frc2::SubsystemBase {
   void   LimelightInit(void);
   bool   IsTarget(void);
   double GetHOffset(void);
-
+  double GetDistance(void);
+  double GetVAngle(void);
 
 
  private:
