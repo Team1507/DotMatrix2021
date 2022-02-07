@@ -17,6 +17,7 @@ class Limelight : public frc2::SubsystemBase {
   double GetHOffset(void);
   double GetDistance(void);
   double GetVAngle(void);
+  void   TogglePipeLine(void);
 
 
  private:

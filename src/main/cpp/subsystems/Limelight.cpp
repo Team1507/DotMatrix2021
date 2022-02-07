@@ -9,6 +9,7 @@
 #include "frc/smartdashboard/SmartDashboard.h"
 #include <math.h>
 
+const double PI = 3.14159;
 
 Limelight::Limelight() 
 {
@@ -36,14 +37,20 @@ double Limelight::GetHOffset(void)
 
 double Limelight::GetDistance(void)
 {
-    const double a1 = 68.4;
-    const double h1 = 23.75;
-    const double h2 = 101.625;
+    //139
+    const double a1 = 19.3;//68.4;
+    const double h1 = 24;
+    const double h2 = 103.50;
     double a2 = nt::NetworkTableInstance::GetDefault().GetTable("limelight")->GetNumber("ty", 0);
-    return (h2-h1)/tan(a1+a2);
+    return (h2-h1)/tan((a1+a2)*(PI/180));//
+    
 }
 
 double Limelight::GetVAngle(void)
 {
     return nt::NetworkTableInstance::GetDefault().GetTable("limelight")->GetNumber("ty", 0);
+}
+void Limelight::TogglePipeLine(void)
+{
+    nt::NetworkTableInstance::GetDefault().GetTable("limelight")->PutNumber("pipeline", 1);
 }

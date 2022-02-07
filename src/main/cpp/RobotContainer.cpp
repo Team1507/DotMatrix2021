@@ -17,7 +17,7 @@
 #include "commands/CmdControlPanelDefault.h"
 #include "commands/CmdShooterDefault.h"
 #include "commands/CmdClimberDefault.h"
-
+#include "commands/CmdTest.h"
 
 
 RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
@@ -29,6 +29,7 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem)
   frc::SmartDashboard::PutData("GrpDriveTest", new GrpDriveTest(&m_drivetrain)  );
   frc::SmartDashboard::PutData("CmdDriveClearAll", new CmdDriveClearAll(&m_drivetrain)  );
   frc::SmartDashboard::PutData("TurnToLimelight", new CmdDriveTurn2Limelight(&m_drivetrain, &m_limelight));
+  frc::SmartDashboard::PutData("Pipeline", new CmdTest(&m_limelight));
 
   //Default Commands
   m_drivetrain.SetDefaultCommand(   CmdDriveWithGamepad( &m_drivetrain, &m_botDriver)  );
